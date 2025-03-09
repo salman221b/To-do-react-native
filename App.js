@@ -16,6 +16,8 @@ export default function App() {
   const [taskItems, setTaskItems] = useState([]);
 
   const handleAddTask = () => {
+    if (task.trim().length === 0) return; // Prevent empty tasks
+
     Keyboard.dismiss();
     setTaskItems([...taskItems, task]);
     console.log(task);
